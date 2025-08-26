@@ -52,13 +52,13 @@ body {
 .brand {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
 }
 
 .brand-icon {
   position: relative;
-  width: 32px;
-  height: 32px;
+  width: 30px;
+  height: 30px;
   background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
   border-radius: 8px;
   display: flex;
@@ -107,12 +107,12 @@ body {
 .network-pill {
   display: flex;
   align-items: center;
-  gap: 8px;
-  padding: 8px 14px;
+  gap: 7px;
+  padding: 7px 12px;
   background: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 20px;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 500;
   color: #e2e8f0;
   backdrop-filter: blur(10px);
@@ -616,7 +616,7 @@ body {
   }
 
   .overview-card {
-    padding: 20px;
+    padding: 15px;
   }
 
   .total-balance {
@@ -624,11 +624,11 @@ body {
   }
 
   .topbar {
-    padding: 0 16px;
+    padding: 0 12px;
   }
 
   .brand-text {
-    font-size: 16px;
+    font-size: 15px;
   }
 
   .features-grid {
