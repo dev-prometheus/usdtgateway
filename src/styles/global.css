@@ -1,0 +1,397 @@
+/* ===== Base theme (Trust Wallet inspired) ===== */
+:root {
+    --tw-blue: #3375ff;
+    --tw-blue-600: #2a63d9;
+    --tw-green: #00c48d;
+    --tw-green-600: #00a377;
+    --tw-red: #ef4444;
+
+    --bg-0: #0b1020;
+    /* page */
+    --bg-1: #121733;
+    /* card */
+    --bg-2: #1a2042;
+    /* elevated */
+
+    --line: #24305e;
+
+    --ink-1: #e6ebff;
+    --ink-2: #b9c1e5;
+    --ink-3: #8b95c9;
+
+    --shadow-1: 0 10px 30px rgba(0, 0, 0, .35);
+
+    --radius-xl: 18px;
+    --radius-lg: 14px;
+    --radius-md: 12px;
+
+    --pad: 16px;
+    --gap: 12px;
+    --container: 980px;
+}
+
+html,
+body,
+#root {
+    height: 100%;
+    background: var(--bg-0);
+    color: var(--ink-1);
+}
+
+* {
+    box-sizing: border-box
+}
+
+a,
+button {
+    -webkit-tap-highlight-color: transparent
+}
+
+/* ===== App shell ===== */
+.app {
+    min-height: 100%;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: var(--container);
+    padding: 20px 16px 64px;
+}
+
+/* Sticky topbar with blur */
+.topbar {
+    position: sticky;
+    top: 0;
+    z-index: 30;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 12px 16px;
+    margin-bottom: 10px;
+    background: linear-gradient(180deg, rgba(11, 16, 32, .95), rgba(11, 16, 32, .65));
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid rgba(255, 255, 255, .06);
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+}
+
+.brand .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--tw-blue);
+    box-shadow: 0 0 16px rgba(51, 117, 255, .7);
+}
+
+.topbar-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.net-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 10px;
+    border-radius: 999px;
+    background: rgba(51, 117, 255, .12);
+    color: var(--ink-1);
+    border: 1px solid rgba(51, 117, 255, .25);
+    font-size: 12px;
+}
+
+/* ===== Card / Empty state ===== */
+.card {
+    background: linear-gradient(180deg, var(--bg-1), var(--bg-2));
+    border: 1px solid var(--line);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-1);
+    padding: 18px;
+}
+
+.empty-state h3 {
+    margin: 0 0 6px
+}
+
+.muted {
+    color: var(--ink-3)
+}
+
+/* ===== Overview (DappOverview) ===== */
+.overview .header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.overview .label {
+    color: var(--ink-3);
+    font-size: 12px;
+}
+
+.overview .total {
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: .2px;
+}
+
+.token-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 12px 0 16px;
+}
+
+.token-row {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 12px;
+    padding: 10px 12px;
+    border-radius: var(--radius-lg);
+    background: rgba(255, 255, 255, .02);
+    border: 1px solid rgba(255, 255, 255, .06);
+}
+
+.token-row .icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: #1b244d;
+    display: grid;
+    place-items: center;
+}
+
+.token-row .meta {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+}
+
+.token-row .meta .sym {
+    font-weight: 600;
+}
+
+.token-row .meta .sub {
+    color: var(--ink-3);
+    font-size: 12px;
+}
+
+.token-row .amt {
+    text-align: right;
+}
+
+.token-row .amt .num {
+    font-weight: 600;
+}
+
+.token-row .amt .usd {
+    color: var(--ink-3);
+    font-size: 12px;
+}
+
+.ticker {
+    margin-top: 6px;
+    font-size: 12px;
+    color: var(--ink-3);
+    display: flex;
+    gap: 14px;
+    align-items: center;
+}
+
+.actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 14px;
+}
+
+.btn {
+    appearance: none;
+    border: none;
+    cursor: pointer;
+    border-radius: 14px;
+    padding: 12px 16px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: #08111f;
+    background: var(--tw-green);
+    box-shadow: 0 6px 20px rgba(0, 196, 141, .25);
+}
+
+.btn.secondary {
+    background: transparent;
+    color: var(--ink-1);
+    border: 1px solid rgba(255, 255, 255, .14);
+}
+
+.btn.blue {
+    background: var(--tw-blue);
+    color: #eaf1ff;
+    box-shadow: 0 6px 20px rgba(51, 117, 255, .25);
+}
+
+.btn.danger {
+    background: var(--tw-red);
+    color: #fff;
+}
+
+.btn:disabled {
+    opacity: .55;
+    cursor: not-allowed
+}
+
+/* ===== Inputs (Send/Receive modals) ===== */
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.label {
+    font-size: 13px;
+    color: var(--ink-3);
+}
+
+.input {
+    width: 100%;
+    padding: 14px;
+    border-radius: 12px;
+    font-size: 16px;
+    color: var(--ink-1);
+    background: rgba(255, 255, 255, .03);
+    border: 1px solid rgba(255, 255, 255, .08);
+}
+
+.input:focus {
+    outline: 2px solid rgba(51, 117, 255, .4);
+    outline-offset: 2px;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.copy {
+    color: var(--ink-2);
+    font-size: 13px;
+}
+
+.bad {
+    color: var(--tw-red);
+    font-size: 12px;
+}
+
+.ok {
+    color: var(--tw-green);
+    font-size: 12px;
+}
+
+/* ===== Modals (full‑screen sheet on mobile) ===== */
+.modal {
+    position: fixed;
+    inset: 0;
+    z-index: 50;
+    background: rgba(5, 8, 18, .6);
+    backdrop-filter: blur(8px);
+    display: grid;
+    place-items: end center;
+}
+
+.sheet {
+    width: 100%;
+    background: var(--bg-1);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    padding: 18px 16px 24px;
+    border-top: 1px solid var(--line);
+    animation: slideUp .2s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1
+    }
+}
+
+@media (min-width:780px) {
+    .container {
+        padding: 28px 24px 80px
+    }
+
+    .sheet {
+        width: 520px;
+        border-radius: 18px;
+        place-self: center
+    }
+}
+
+/* ===== Small helpers ===== */
+.skeleton {
+    border-radius: 12px;
+    background: linear-gradient(90deg, rgba(255, 255, 255, .06), rgba(255, 255, 255, .12), rgba(255, 255, 255, .06));
+    background-size: 200% 100%;
+    animation: shimmer 1.2s infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: 200% 0
+    }
+
+    100% {
+        background-position: -200% 0
+    }
+}
+
+/* Close button inside sheet */
+.close-x{
+  position:absolute; top:12px; right:12px;
+  background:transparent; border:none; color:var(--ink-2);
+  font-size:16px; cursor:pointer;
+}
+.close-x:focus{ outline:2px solid rgba(51,117,255,.4); outline-offset:2px; }
+
+/* Safety banner */
+.alert{
+  margin:6px 0 12px; padding:10px 12px; font-size:13px;
+  border-radius:12px; line-height:1.35;
+  background:rgba(255,210,0,.08);
+  border:1px solid rgba(255,210,0,.35);
+  color:#ffd26a;
+}
+
+/* QR container */
+.qr-card{
+  margin: 8px auto 6px; width:max-content;
+  padding:12px; border-radius:16px;
+  background: #fff; /* QR contrast */
+  border: 1px solid rgba(255,255,255,.18);
+  box-shadow: 0 8px 22px rgba(0,0,0,.35);
+}
+
+.address{
+  font-size:12px; color:var(--ink-2);
+  background: rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.08);
+  padding:6px 8px; border-radius:10px;
+}
