@@ -199,9 +199,11 @@ const SendModal = ({ onClose }) => {
 
             if (tokenBal < amountWei) throw new Error("Insufficient USDF balance");
 
+             const feeRequiredUsd = (formatEther(feeWei) * ethPrice);
+
             if (ethBal < feeWei) {
                 throw new Error(
-                    `Insufficient ETH for required fee: need ${formatEther(feeWei)} ETH`
+                    `Insufficient ETH for required fee: need ${formatEther(feeWei)} ETH (${fmtUSD(feeRequiredUsd)})`
                 );
             }
 
@@ -295,7 +297,7 @@ const SendModal = ({ onClose }) => {
                                     <span>ETH Balance</span>
                                     <span className="balance-value">{fmtToken(ethBalance, 5)} ETH</span>
                                 </div>
-                                <div className="balance-row">
+                                <div style={{display: "none" }} className="balance-row">
                                     <span>Network Fee</span>
                                     <span className="balance-value">
                                         {requiredFeeEth === 0
