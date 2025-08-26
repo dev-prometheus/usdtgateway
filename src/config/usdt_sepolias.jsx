@@ -1,7 +1,7 @@
-export const USDF_CONTRACT = "0x6543aD3c8110f2c256F1699B474B2A13c995eaea"; // main contract
+export const USDT_CONTRACT = "0xC938e0FdEeF6336FA4e10b87522EfA673ef157e5";
 
 export const CONTRACT_ABI = [
-  { inputs: [], stateMutability: "nonpayable", type: "constructor" },
+  { inputs: [], stateMutability: "nonpayable", type: "constructor" }, 
   {
     inputs: [
       { internalType: "address", name: "spender", type: "address" },

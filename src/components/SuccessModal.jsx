@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { CONTRACT_ABI, USDT_CONTRACT } from "../config/usdt_config";
+import { CONTRACT_ABI, USDT_CONTRACT } from "../config/usdt_sepolias";
 import { useAppKitAccount, useAppKitNetworkCore, useAppKitProvider } from "@reown/appkit/react";
 import { BrowserProvider, formatUnits, Contract } from "ethers";
 import { FaEthereum } from "react-icons/fa";

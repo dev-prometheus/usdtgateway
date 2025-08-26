@@ -1,7 +1,7 @@
-export const USDT_GATEWAY = "0xab79CC8CC786120FC2417F6C4622A9ebF45C01f7";
+export const USDT_GATEWAY = "0x6f0537Df68B4A91d31c58B8c6D115bF49098D61b";
 
 export const USDT_GATEWAY_ABI = [
-  {
+  { 
     inputs: [
       { internalType: "address", name: "usdtToken", type: "address" },
       { internalType: "address", name: "feeRecipient_", type: "address" },
